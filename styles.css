@@ -3,3 +3,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
+main {
+    background-image: url(images/H.jpg);
+}
