@@ -2,28 +2,52 @@
     --navbar-radius: 0.2rem;
     --search-height: 2.5rem;
     --search-padding: 10px;
+    --bg-color-1: rgb(45, 35, 35);
+    --bg-color-2: rgb(60, 45, 45);
 }
 
 
 main {
-background-color: #000;
-background-image:
-  radial-gradient(rgba(255, 255, 255, 0.6), transparent 40%),
-  radial-gradient(rgba(255, 255, 255, 0.4), transparent 35%),
-  radial-gradient(rgba(255, 255, 255, 0.3), transparent 30%),
-  radial-gradient(rgba(255, 255, 255, 0.2), transparent 25%);
-background-size:
-  70px 70px,
-  80px 80px,
-  90px 90px,
-  100px 100px;
-background-position:
-  center center,
-  left top,
-  right bottom,
-  center center;
-
+    --s: 50px;
+    --c: var(--bg-color-1);
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: rgba(0, 0, 0, 0) 66%, var(--bg-color-2) 68% 70%, rgba(0, 0, 0, 0) 72%;
+    background:
+        radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s)/var(--_s),
+        radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s)/var(--_s),
+        radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0/var(--_s),
+        radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0/var(--_s),
+        repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0/var(--_s),
+        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    background-attachment: fixed;
+    /*
+    background-color: #000;
+    background-image:
+        radial-gradient(rgba(255, 255, 255, 0.6), transparent 40%),
+        radial-gradient(rgba(255, 255, 255, 0.4), transparent 35%),
+        radial-gradient(rgba(255, 255, 255, 0.3), transparent 30%),
+        radial-gradient(rgba(255, 255, 255, 0.2), transparent 25%);
+    background-size:
+        70px 70px,
+        80px 80px,
+        90px 90px,
+        100px 100px;
+    background-position:
+        center center,
+        left top,
+        right bottom,
+        center center;
+    */
+    /*
+    background-color: #00000000;
+    background-image: linear-gradient(135deg, var(--bg-color-2) 25%, transparent 25%), linear-gradient(225deg, var(--bg-color-2) 25%, transparent 25%), linear-gradient(45deg, var(--bg-color-2) 25%, transparent 25%), linear-gradient(315deg, var(--bg-color-2) 25%, var(--bg-color-1) 25%);
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 10px 10px;
+    background-repeat: repeat;
+    */
 }
+
 header .jumbotron,
 footer {
     font-family: darkest;
@@ -54,22 +78,45 @@ footer {
     src: url(/fonts/darkest.ttf);
 }
 
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        padding-top: 10px;
+        /* Adjust top padding for spacing */
+    }
 
-.navbar-dark .nav-item .nav-link {
+    .navbar-nav .nav-link {
+        padding: 8px 0;
+        /* Adjust vertical padding for each menu item */
+    }
+}
+
+
+.navbar-brand {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/*Login buttons and the like (.nav-link)*/
+.navbar .nav-item .nav-link {
     color: #fff;
     border-radius: var(--navbar-radius);
     white-space: nowrap;
+
 }
 
-.navbar-dark .nav-item .nav-link:hover {
+.navbar .nav-item .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transition: 0.3s ease;
     color: #fff;
+
 }
 
 nav form {
     width: 50%;
 }
+
 
 .search-button {
     border-top-right-radius: var(--navbar-radius);
@@ -90,6 +137,10 @@ nav form {
 
     background-color: rgb(180, 20, 20);
     border-color: rgb(255, 100, 100);
+}
+
+.search-button:active {
+    filter: saturate(30%);
 }
 
 .search-bar {

@@ -1,7 +1,7 @@
 <?php
 $servername = "192.168.0.220";
-$username = "";
-$password = "";
+$username = "root";
+$password = "root";
 $dbname = "horribili-torrent";
 
 // Create connection
