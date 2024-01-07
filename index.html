@@ -1,102 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Horribili Torrent</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-  </head>
+  <title>Horribili Torrent</title>
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
 
-  <body>
-    <!-- Your content goes here -->
-    <header>
-      <h1>We come!</h1>
-      <!-- Add navigation, logo, etc. -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<body>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Home <span class="sr-only">(current)</span></a
-              >
+  <header>
+    <div class="jumbotron">
+      <h1 class="display-3">We come!</h1>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Container wrapper -->
+      <div class="container-fluid" style="max-width: 1800px;">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="/" style="min-width: none;"><img id="Horribili-logo"
+            src="/images/Horribili_corp.png" alt="Horribili-logo" draggable="false" height="40">
+
+        </a>
+        <!--Searchbar-->
+        <form class="d-flex align-items-center form-search">
+          <div class="input-group">
+            <input type="search" class="search-bar" placeholder="Search" aria-label="Search" st>
+          </div>
+          <button href="#!" class="button text-white search-button">Search</button>
+        </form>
+
+
+        
+          <ul class="navbar-nav ms-3">
+            <li class="nav-item me-3">
+              <a class="nav-link d-flex align-items-center" href="#!">don't know</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+            <li class="nav-item me-3">
+              <a class="nav-link d-flex align-items-center " href="#!">Watchlist</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+            <li class="nav-item me-3">
+              <a class="nav-link d-flex align-items-center" href="#!">Register</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+            <li class="nav-item me-3">
+              <a class="nav-link d-flex align-items-center" href="#!">Sign in</a>
             </li>
+
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
+          <img>
         </div>
-      </nav>
-    </header>
+      </div>
+      <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
 
-    <main>
-      
+  <main>
+    <img src="/images/testpic.png" alt="" style="height: 3000px; width: 10px;">
+  </main>
 
-    </main>
+  <footer>
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+    <!-- Add footer content such as links, social media icons, etc. -->
+  </footer>
 
-    <footer>
-      <p>&copy; 2024 Your Website. All rights reserved.</p>
-      <!-- Add footer content such as links, social media icons, etc. -->
-    </footer>
+  <!-- Your JavaScript code or external script links can be added here -->
+  <script src="script.js">
+    console.log('Hello, world!');
+  </script>
+</body>
 
-    <!-- Your JavaScript code or external script links can be added here -->
-    <script>
-      // Example: console.log('Hello, world!');
-    </script>
-  </body>
 </html>

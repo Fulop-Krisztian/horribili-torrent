@@ -1,9 +1,110 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+:root {
+    --navbar-radius: 0.2rem;
+    --search-height: 2.5rem;
+    --search-padding: 10px;
 }
 
+
 main {
-    background-image: url(images/H.jpg);
+background-color: #000;
+background-image:
+  radial-gradient(rgba(255, 255, 255, 0.6), transparent 40%),
+  radial-gradient(rgba(255, 255, 255, 0.4), transparent 35%),
+  radial-gradient(rgba(255, 255, 255, 0.3), transparent 30%),
+  radial-gradient(rgba(255, 255, 255, 0.2), transparent 25%);
+background-size:
+  70px 70px,
+  80px 80px,
+  90px 90px,
+  100px 100px;
+background-position:
+  center center,
+  left top,
+  right bottom,
+  center center;
+
+}
+header .jumbotron,
+footer {
+    font-family: darkest;
+}
+
+header {
+    text-align: center;
+    background-color: black;
+    background-size: cover;
+    color: orange;
+    text-shadow: 100px;
+}
+
+footer {
+    /*
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    */
+    width: 100%;
+    background-color: orange;
+    color: white;
+    text-align: right;
+}
+
+@font-face {
+    font-family: darkest;
+    src: url(/fonts/darkest.ttf);
+}
+
+
+.navbar-dark .nav-item .nav-link {
+    color: #fff;
+    border-radius: var(--navbar-radius);
+    white-space: nowrap;
+}
+
+.navbar-dark .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+    color: #fff;
+}
+
+nav form {
+    width: 50%;
+}
+
+.search-button {
+    border-top-right-radius: var(--navbar-radius);
+    border-bottom-right-radius: var(--navbar-radius);
+    background-color: rgb(180, 20, 20, 0.7);
+
+    min-height: var(--search-height);
+    padding-left: var(--search-padding);
+    padding-right: var(--search-padding);
+
+
+    border-style: solid;
+    border-color: rgb(255, 20, 20, 0.5);
+    border-width: 2px;
+}
+
+.search-button:hover {
+
+    background-color: rgb(180, 20, 20);
+    border-color: rgb(255, 100, 100);
+}
+
+.search-bar {
+
+    padding-left: var(--search-padding);
+    border-top-left-radius: var(--navbar-radius);
+    border-bottom-left-radius: var(--navbar-radius);
+    background-color: rgba(255, 255, 255, 0.1);
+    min-height: var(--search-height);
+    border: 30px;
+    color: white;
+    width: 100%;
+}
+
+.search-bar:focus {
+    outline: none;
+    border: none;
 }
