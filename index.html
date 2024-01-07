@@ -35,10 +35,9 @@
         </a>
         <!--Searchbar-->
         <form class="d-flex align-items-center form-search" action="search.php" method="get">
-          <input type="search text" class="search-bar" placeholder="Search" aria-label="Search" >
+          <input name="search" type="text" class="search-bar" placeholder="Search" aria-label="Search">
           <button class="button text-white search-button" type="submit">Search</button>
-        </form> 
-
+        </form>
 
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -72,15 +71,17 @@
   </header>
 
   <main>
+    <div>
+      <button onclick="search()" style></button>
+    </div>
     <img src="/images/testpic.png" alt="" style="height: 3000px; width: 10px;">
   </main>
 
   <footer>
     <p>&copy; 2024 Your Website. All rights reserved.</p>
-    <!-- Add footer content such as links, social media icons, etc. -->
   </footer>
 
-  <!-- Your JavaScript code or external script links can be added here -->
+
   <script src="script.js">
     console.log('Hello, world!');
   </script>
