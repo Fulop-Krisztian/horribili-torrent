@@ -4,11 +4,11 @@ require 'PHP/connectdb.php';
 
 // Limit for entries to ask for
 
-$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 10;
+$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 50;
 
-if (isset($_GET['search'])) {
+if (isset($_GET['search']) && $_GET['search'] !== '') {
     $search = htmlspecialchars($_GET['search']);
-    $query = "SELECT * FROM posts WHERE title LIKE '%$search%'";
+    $query = "SELECT * FROM posts WHERE title LIKE '%$search%' LIMIT $limit";
 } else {
     // If 'search' parameter is not found in the GET request, search all posts
     $query = "SELECT * FROM posts LIMIT $limit";
@@ -24,7 +24,8 @@ $result = mysqli_query($conn, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
     echo "<table border='1'>";
-    echo "<tr><th>ID</th><th>Name</th></tr>"; // Adjust columns based on your table structure
+    echo "<tr><th>ID</th><th>Name</th><th>Description</th><th>User_ID</th><th>filepath</th><th>Timestamp</th></tr>"; 
+
 
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
@@ -39,7 +40,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 
     echo "</table>";
 } else {
-    echo "No data found";
+    echo "<br>No data found";
 }
 
 
