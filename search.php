@@ -3,24 +3,24 @@
 require 'PHP/connectdb.php';
 
 // Limit for entries to ask for
+
 $limit = isset($_GET['limit']) ? intval($_GET['limit']) : 10;
-$search = isset($_GET['search']) ? mysqli_real_escape_string($conn, htmlspecialchars($_GET['search'])) : '';
 
 if (isset($_GET['search'])) {
-    $search = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
-    
-    $query = "SELECT * FROM posts WHERE title like {$search}";
+    $search = htmlspecialchars($_GET['search']);
+    $query = "SELECT * FROM posts WHERE title LIKE '%$search%'";
 } else {
     // If 'search' parameter is not found in the GET request, search all posts
-    $query = "SELECT * FROM posts LIMIT '{$limit}'";
+    $query = "SELECT * FROM posts LIMIT $limit";
 }
 
-$query = "SELECT * FROM posts WHERE title like '%$search%'";
-
-$result = mysqli_query($conn, $query);
-
-echo ($search);
+echo ('<br>');
+if (isset($search)) {
+    echo $search;
+}
+echo ('<br>');
 echo ($query);
+$result = mysqli_query($conn, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
     echo "<table border='1'>";
