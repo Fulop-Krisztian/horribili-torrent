@@ -19,6 +19,7 @@ html body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Noto Sans;
 }
 
 .welcome *,
@@ -36,7 +37,7 @@ header .welcome {
 
     background-color: black;
     background-size: cover;
-    
+
     padding-bottom: var(--header-padding);
     padding-top: var(--header-padding);
 }
@@ -51,19 +52,24 @@ footer {
     margin: 0;
 }
 
-footer .copyright{
+footer .copyright {
     padding-bottom: 8px;
     padding-top: 8px;
 }
 
 /* navigation flexbox */
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.navbar {
     background-color: #212529;
     color: #fff;
-    padding: 8px
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1800px;
 }
 
 nav>* {
@@ -100,8 +106,6 @@ nav .form {
 
     color: white;
     font-size: medium;
-
-
 }
 
 .search-bar:focus {
@@ -128,7 +132,6 @@ nav .form {
 }
 
 .search-button:hover {
-
     background-color: rgb(180, 20, 20);
     border-color: rgb(255, 100, 100);
 }
@@ -137,41 +140,42 @@ nav .form {
     filter: saturate(30%);
 }
 
-/* buttons */
+/* right buttons */
 nav ul {
     list-style: none;
     display: flex;
-    align-items: center;
+    height: 40px;
 }
 
 nav ul li {
-    padding: auto;
-    height: 100%;
-}
-
-nav ul li a {
     margin-right: 1rem;
-    height: 100%;
 }
 
 nav ul li a {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    height: 100%;
+    width: 100%;
     text-decoration: none;
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
-/*Login buttons and the like (.nav-link)*/
-.navbar .nav-item .nav-link {
+.nav-item, .nav-link {
     color: #fff;
     border-radius: var(--navbar-radius);
     white-space: nowrap;
 
 }
 
-.navbar .nav-item .nav-link:hover {
+.nav-item:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transition: 0.3s ease;
     color: #fff;
-
+}
+.nav-item:active {
+    filter: saturate(30%)
 }
 
 nav form {
@@ -193,4 +197,44 @@ main {
         repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0/var(--_s),
         radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
     background-attachment: fixed;
+}
+
+/* Media query for mobile */
+@media screen and (max-width: 800px) {
+
+    /* Move search bar below other elements */
+    nav > *{
+        padding: unset;
+    }
+    .nav {
+        flex-wrap: wrap;
+    }
+
+    nav a.logo {
+        margin: auto;
+    }
+
+    nav .form {
+        order: 2;
+        min-width: 90%;
+        max-width: fit-content;
+        margin-top: 10px;
+    }
+
+    nav .navbar-items {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    nav ul {
+        margin: auto;
+        justify-content: space-between;
+    }
+
+
 }
