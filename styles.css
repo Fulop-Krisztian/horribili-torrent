@@ -1,101 +1,162 @@
-:root {
-    --navbar-radius: 0.2rem;
-    --search-height: 2.5rem;
-    --search-padding: 10px;
-    --bg-color-1: rgb(45, 35, 35);
-    --bg-color-2: rgb(60, 45, 45);
-}
-
-
-main {
-    --s: 50px;
-    --c: var(--bg-color-1);
-    --_s: calc(2*var(--s)) calc(2*var(--s));
-    --_g: 35.36% 35.36% at;
-    --_c: rgba(0, 0, 0, 0) 66%, var(--bg-color-2) 68% 70%, rgba(0, 0, 0, 0) 72%;
-    background:
-        radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s)/var(--_s),
-        radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s)/var(--_s),
-        radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0/var(--_s),
-        radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0/var(--_s),
-        repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0/var(--_s),
-        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
-    background-attachment: fixed;
-    /*
-    background-color: #000;
-    background-image:
-        radial-gradient(rgba(255, 255, 255, 0.6), transparent 40%),
-        radial-gradient(rgba(255, 255, 255, 0.4), transparent 35%),
-        radial-gradient(rgba(255, 255, 255, 0.3), transparent 30%),
-        radial-gradient(rgba(255, 255, 255, 0.2), transparent 25%);
-    background-size:
-        70px 70px,
-        80px 80px,
-        90px 90px,
-        100px 100px;
-    background-position:
-        center center,
-        left top,
-        right bottom,
-        center center;
-    */
-    /*
-    background-color: #00000000;
-    background-image: linear-gradient(135deg, var(--bg-color-2) 25%, transparent 25%), linear-gradient(225deg, var(--bg-color-2) 25%, transparent 25%), linear-gradient(45deg, var(--bg-color-2) 25%, transparent 25%), linear-gradient(315deg, var(--bg-color-2) 25%, var(--bg-color-1) 25%);
-    background-position: 10px 0, 10px 0, 0 0, 0 0;
-    background-size: 10px 10px;
-    background-repeat: repeat;
-    */
-}
-
-header .jumbotron,
-footer {
-    font-family: darkest;
-}
-
-header {
-    text-align: center;
-    background-color: black;
-    background-size: cover;
-    color: orange;
-    text-shadow: 100px;
-}
-
-footer {
-    /*
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    */
-    width: 100%;
-    background-color: orange;
-    color: white;
-    text-align: right;
-}
-
 @font-face {
     font-family: darkest;
     src: url(/fonts/darkest.ttf);
 }
 
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        padding-top: 10px;
-        /* Adjust top padding for spacing */
-    }
+:root {
+    --navbar-radius: 0.2rem;
+    --search-height: 2.5rem;
+    --search-padding: 10px;
+    --header-padding: 8px;
+    --bg-color-1: rgb(45, 35, 35);
+    --bg-color-2: rgb(60, 45, 45);
 
-    .navbar-nav .nav-link {
-        padding: 8px 0;
-        /* Adjust vertical padding for each menu item */
-    }
 }
 
+/* This is so the HTML shows up correctly (body doesn't get pushed in) */
+html body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.navbar-brand {
+.welcome *,
+footer * {
+    margin: 0;
+}
+
+/* Header */
+header .welcome {
+    font-family: darkest;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    color: orange;
+
+    background-color: black;
+    background-size: cover;
+    
+    padding-bottom: var(--header-padding);
+    padding-top: var(--header-padding);
+}
+
+/* Footer */
+footer {
+    font-family: darkest;
+    font-size: 32px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin: 0;
+}
+
+footer .copyright{
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+/* navigation flexbox */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #212529;
+    color: #fff;
+    padding: 8px
+}
+
+nav>* {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Logo */
+nav a.logo {
     width: 160px;
     height: 40px;
     display: flex;
     align-items: center;
+}
+
+/* Searchbar */
+nav .form {
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.search-bar {
+
+    padding-left: var(--search-padding);
+    border-top-left-radius: var(--navbar-radius);
+    border-bottom-left-radius: var(--navbar-radius);
+    background-color: rgba(255, 255, 255, 0.1);
+
+
+    min-height: var(--search-height);
+    width: 100%;
+    border: 30px;
+
+    color: white;
+    font-size: medium;
+
+
+}
+
+.search-bar:focus {
+    outline: none;
+    border: none;
+}
+
+.search-button {
+    border-top-right-radius: var(--navbar-radius);
+    border-bottom-right-radius: var(--navbar-radius);
+    background-color: rgb(180, 20, 20, 0.7);
+
+    min-height: var(--search-height);
+    padding-left: var(--search-padding);
+    padding-right: var(--search-padding);
+
+
+    border-style: solid;
+    border-color: rgb(255, 20, 20, 0.5);
+    border-width: 2px;
+
+    color: white;
+    font-size: medium;
+}
+
+.search-button:hover {
+
+    background-color: rgb(180, 20, 20);
+    border-color: rgb(255, 100, 100);
+}
+
+.search-button:active {
+    filter: saturate(30%);
+}
+
+/* buttons */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    padding: auto;
+    height: 100%;
+}
+
+nav ul li a {
+    margin-right: 1rem;
+    height: 100%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 /*Login buttons and the like (.nav-link)*/
@@ -117,45 +178,19 @@ nav form {
     width: 50%;
 }
 
-
-.search-button {
-    border-top-right-radius: var(--navbar-radius);
-    border-bottom-right-radius: var(--navbar-radius);
-    background-color: rgb(180, 20, 20, 0.7);
-
-    min-height: var(--search-height);
-    padding-left: var(--search-padding);
-    padding-right: var(--search-padding);
-
-
-    border-style: solid;
-    border-color: rgb(255, 20, 20, 0.5);
-    border-width: 2px;
-}
-
-.search-button:hover {
-
-    background-color: rgb(180, 20, 20);
-    border-color: rgb(255, 100, 100);
-}
-
-.search-button:active {
-    filter: saturate(30%);
-}
-
-.search-bar {
-
-    padding-left: var(--search-padding);
-    border-top-left-radius: var(--navbar-radius);
-    border-bottom-left-radius: var(--navbar-radius);
-    background-color: rgba(255, 255, 255, 0.1);
-    min-height: var(--search-height);
-    border: 30px;
-    color: white;
-    width: 100%;
-}
-
-.search-bar:focus {
-    outline: none;
-    border: none;
+/* Background */
+main {
+    --s: 50px;
+    --c: var(--bg-color-1);
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: rgba(0, 0, 0, 0) 66%, var(--bg-color-2) 68% 70%, rgba(0, 0, 0, 0) 72%;
+    background:
+        radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s)/var(--_s),
+        radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s)/var(--_s),
+        radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0/var(--_s),
+        radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0/var(--_s),
+        repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0/var(--_s),
+        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    background-attachment: fixed;
 }
