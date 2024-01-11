@@ -1,11 +1,13 @@
-function Searchbar({onDataReceived}) {
+import { useContext } from 'react';
+import { PostContext } from '/src/PostContext.jsx';
+
+function Searchbar() {
     const handleSearch = async () => {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos/');
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
-                onDataReceived(data);
             } else {
                 console.error('Failed to fetch data');
             }

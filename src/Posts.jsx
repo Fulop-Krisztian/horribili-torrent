@@ -1,5 +1,9 @@
+
+import { useContext } from 'react';
+import { PostContext } from 'src/PostContext.jsx';
+
 function Posts() {
-    const fruits = []
+    const Posts = useContext(PostContext)
 
     return (
         <>
