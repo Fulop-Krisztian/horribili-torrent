@@ -162,7 +162,8 @@ nav ul li a {
     text-align: center;
 }
 
-.nav-item, .nav-link {
+.nav-item,
+.nav-link {
     color: #fff;
     border-radius: var(--navbar-radius);
     white-space: nowrap;
@@ -174,6 +175,7 @@ nav ul li a {
     transition: 0.3s ease;
     color: #fff;
 }
+
 .nav-item:active {
     filter: saturate(30%)
 }
@@ -203,9 +205,10 @@ main {
 @media screen and (max-width: 800px) {
 
     /* Move search bar below other elements */
-    nav > *{
+    nav>* {
         padding: unset;
     }
+
     .nav {
         flex-wrap: wrap;
     }
