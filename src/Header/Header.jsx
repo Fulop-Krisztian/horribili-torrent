@@ -4,13 +4,13 @@ import Navitems from "./Navitems.jsx";
 function Header() {
     return (
         <header>
-            <div class="welcome">
+            <div className="welcome">
                 <h1>We come!</h1>
             </div>
-            <section class="navbar">
-                <nav class="nav">
-                    <a href="/" class="logo">
-                        <img src="/images/Horribili_corp.png" alt="Horribili-logo" draggable="false" height="40"></img>
+            <section className="navbar">
+                <nav className="nav">
+                    <a href="/" className="logo">
+                        <img src="src/assets/Horribili_corp.png" alt="Horribili-logo" draggable="false" height="40"/>
                     </a>
                     <Searchbar></Searchbar>
                     <Navitems></Navitems>

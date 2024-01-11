@@ -2,14 +2,21 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 
 
+
 function App() {
   return (
     <>
       <Header />
-      <Footer />
+
       <main>
-        <img src="/images/ancestor.webp" alt="" class="" style="margin: auto;"></img>
+
+
+        <img src="src/assets/ancestor.webp" alt=""></img>
+
+
       </main>
+
+      <Footer />
     </>
   );
 
