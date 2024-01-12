@@ -10,7 +10,7 @@ function Header() {
             <section className="navbar">
                 <nav className="nav">
                     <a href="/" className="logo">
-                        <img src="src/assets/Horribili_corp.png" alt="Horribili-logo" draggable="false" height="40"/>
+                        <img src="src/assets/Horribili_corp.png" alt="Horribili-logo" draggable="false" height="40" />
                     </a>
                     <Searchbar></Searchbar>
                     <Navitems></Navitems>

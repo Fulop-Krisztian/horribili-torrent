@@ -1,34 +1,27 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import SearchContext from '/src/Contexts/SearchContext.jsx';
-
+import { searchPosts } from '/src/services/SearchService';
 
 function Searchbar() {
   const { setSearchResults } = useContext(SearchContext);
-  const [searchPressed, setSearchPressed] = useState(false)
+  const navigate = useNavigate();
 
-  const handleSearch = async () => {
-    setSearchPressed(true)
+  const handleSearch = async (searchTerm) => {
     try {
-      const response = await fetch('https://krissssz.ddns.net/search.php');
-      
-      if (response.ok) {
-        const data = await response.json();
-        setSearchResults(data);
-        console.log(SearchContext)
-        console.log('Successfully received search results:', data);
-      } 
-      
-      else {
-        console.error('Failed to fetch data');
-      }
-
+      const data = await searchPosts(searchTerm);
+      setSearchResults(data);
+      navigate(`/search?search=${searchTerm}`);
     } catch (error) {
-      console.error('Error during fetch:', error);
+      // Handle errors
     }
   };
 
   return (
-    <form className="form" onSubmit={(e) => { e.preventDefault(); handleSearch(); }}>
+    <form
+      className="form"
+      onSubmit={(e) => { e.preventDefault(); handleSearch(e.target.search.value); }}
+    >
       <input
         name="search"
         type="text"

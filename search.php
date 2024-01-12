@@ -24,7 +24,7 @@ if (isset($_GET['search']) && $_GET['search'] !== '') {
 $result = mysqli_query($conn, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
-    
+
     while ($row = mysqli_fetch_assoc($result)) {
         $response[] = array(
             'post_id' => $row["post_id"],

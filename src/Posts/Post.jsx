@@ -11,8 +11,8 @@ function Post(props) {
         <tr className='post'>
             <td className='postcell1'><a>{props.title}</a></td>
             <td className='postcell2'>{props.size}</td>
-            <td className='postcell3'>props</td>
-            <td className='postcell4'>Size</td>
+            <td className='postcell3'>nothing</td>
+            <td className='postcell4'>{}</td>
             <td className='postcell5'>Krissssz</td>
         </tr>
     );
