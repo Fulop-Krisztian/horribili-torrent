@@ -1,6 +1,3 @@
-import { useContext } from 'react';
-import { PostContext } from '/src/PostContext.jsx';
-
 function Searchbar() {
     const handleSearch = async () => {
         try {
