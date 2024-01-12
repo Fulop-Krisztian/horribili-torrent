@@ -1,21 +1,26 @@
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
-import PostContainer from "./Posts/PostContainer"
-import Welcome from "./Welcome";
+import React, { useState } from 'react';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
+import PostContainer from './Posts/PostContainer';
+import Welcome from './Welcome';
+import SearchContext from './Contexts/SearchContext';
 
-const renderposts = true
+const App = () => {
+  const [searchResults, setSearchResults] = useState([]);
+  const renderposts = true;
 
-function App() {
   return (
-    <>
-      <Header />
-      <main className="content">
-        <PostContainer renderposts={renderposts}/>
-        <Welcome renderposts={renderposts}/>
-      </main>
-      <Footer />
-    </>
+    <SearchContext.Provider value={{ searchResults, setSearchResults }}>
+      <>
+        <Header />
+        <main className="content">
+          <PostContainer renderposts={renderposts} />
+          <Welcome renderposts={renderposts} />
+        </main>
+        <Footer />
+      </>
+    </SearchContext.Provider>
   );
-}
+};
 
-export default App
+export default App;

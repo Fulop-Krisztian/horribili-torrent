@@ -1,6 +1,11 @@
-import Post from "./Post";
+import React, { useContext } from 'react';
+import SearchContext from '/src/Contexts/SearchContext.jsx';
+import Post from './Post';
+
 
 function PostContainer(props) {
+    const { searchResults } = useContext(SearchContext);
+
     if (props.renderposts) {
         return (
             <div className="postcontainer">
@@ -9,36 +14,38 @@ function PostContainer(props) {
                         <tr>
                             <th className="postcell1">Name</th>
                             <th className="postcell2">Size</th>
-                            <th className="postcell3"></th>
+                            <th className="postcell3">third</th>
                             <th className="postcell4">Time</th>
                             <th className="postcell5">Uploader</th>
                         </tr>
                     </thead>
+
                     <tbody className="posttablebody">
-                        <Post post_id="1" />
-                        <Post post_id="2" />
-                        <Post post_id="3" />
-                        <Post post_id="1" />
-                        <Post />
-                        <Post post_id="1" title=""/>
-                        <Post post_id="1" />
-                        <Post post_id="1" />
-                        <Post post_id="1" />
-                        <Post post_id="1" />
-                        <Post post_id="1" />
-                        <Post post_id="1" />
-                        <Post post_id="1" />
-                        <Post post_id="1" />
-                        <Post post_id="1" />
-                        <Post post_id="1" />
+                        {searchResults.map((post) => (
+                            <Post
+                                key={post.post_id}
+                                post_id={post.post_id}
+                                title={post.title}
+                                description={post.description}
+                                user_id={post.user_id}
+                                file_path={post.file_path}
+                                timestamp={post.timestamp}
+                            />
+                        ))}
                     </tbody>
                 </table>
             </div>
         );
-    }
-    else {
-        return
+    } else {
+        return null; // Return null or some placeholder when not rendering posts
     }
 }
 
-export default PostContainer
+export default PostContainer;
+/*
+post_id: " No post ID defined",
+    title: " No title defined",
+    size: " No size defined",
+    uploader: " No uploader defined",
+    timstamp: " No timestamp defined"
+*/
