@@ -1,10 +1,17 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Max-Age: 86400'); // 1 day
+header('Content-Type: application/json');
+
 // Connect database to search from
 require 'PHP/connectdb.php';
 
 // Limit for entries to ask for
-
 $limit = isset($_GET['limit']) ? intval($_GET['limit']) : 50;
+
+$response = array();
 
 if (isset($_GET['search']) && $_GET['search'] !== '') {
     $search = htmlspecialchars($_GET['search']);
@@ -14,35 +21,22 @@ if (isset($_GET['search']) && $_GET['search'] !== '') {
     $query = "SELECT * FROM posts LIMIT $limit";
 }
 
-echo ('<br>');
-if (isset($search)) {
-    echo $search;
-}
-echo ('<br>');
-echo ($query);
 $result = mysqli_query($conn, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
-    echo "<table border='1'>";
-    echo "<tr><th>ID</th><th>Name</th><th>Description</th><th>User_ID</th><th>filepath</th><th>Timestamp</th></tr>"; 
-
 
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>". $row["post_id"] ."</td>";
-        echo "<td>". $row["title"] ."</td>";
-        echo "<td>". $row["description"] ."</td>";
-        echo "<td>". $row["user_id"] ."</td>";
-        echo "<td>". $row["file_path"] ."</td>";
-        echo "<td>". $row["timestamp"] ."</td>";
-        echo "</tr>";
+        $response[] = array(
+            'post_id' => $row["post_id"],
+            'title' => $row["title"],
+            'description' => $row["description"],
+            'user_id' => $row["user_id"],
+            'file_path' => $row["file_path"],
+            'timestamp' => $row["timestamp"]
+        );
     }
-
-    echo "</table>";
 } else {
-    echo "<br>No data found";
+    $response[] = array();
 }
 
-
-$conn->close();
-?>
+echo json_encode($response);

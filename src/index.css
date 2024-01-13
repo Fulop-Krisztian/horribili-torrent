@@ -1,6 +1,6 @@
 @font-face {
     font-family: darkest;
-    src: url(/fonts/darkest.ttf);
+    src: url(/src/assets/Fonts/darkest.ttf)
 }
 
 :root {
@@ -8,9 +8,17 @@
     --search-height: 2.5rem;
     --search-padding: 10px;
     --header-padding: 8px;
+
     --bg-color-1: rgb(45, 35, 35);
     --bg-color-2: rgb(60, 45, 45);
 
+    --post-color-1: whitesmoke;
+    --post-color-2: rgb(230, 230, 230);
+
+    --red-bright: rgb(220, 50, 50);
+    --red-dark: rgb(150, 10, 10);
+
+    --faded-red: rgba(200, 25, 25, 0.5);
 }
 
 /* This is so the HTML shows up correctly (body doesn't get pushed in) */
@@ -28,7 +36,7 @@ footer * {
 }
 
 /* Header */
-header .welcome {
+.header .welcome {
     font-family: darkest;
     font-size: 2em;
     font-weight: 300;
@@ -42,6 +50,7 @@ header .welcome {
     padding-top: var(--header-padding);
 }
 
+
 /* Footer */
 footer {
     font-family: darkest;
@@ -50,6 +59,8 @@ footer {
     background-color: rgb(0, 0, 0);
     color: white;
     margin: 0;
+
+    margin-top: 10px;
 }
 
 footer .copyright {
@@ -94,11 +105,12 @@ nav .form {
 
 .search-bar {
 
+    padding-top: 0px;
+    padding-bottom: 0px;
     padding-left: var(--search-padding);
     border-top-left-radius: var(--navbar-radius);
     border-bottom-left-radius: var(--navbar-radius);
     background-color: rgba(255, 255, 255, 0.1);
-
 
     min-height: var(--search-height);
     width: 100%;
@@ -114,9 +126,11 @@ nav .form {
 }
 
 .search-button {
+    cursor: pointer;
+
     border-top-right-radius: var(--navbar-radius);
     border-bottom-right-radius: var(--navbar-radius);
-    background-color: rgb(180, 20, 20, 0.7);
+    background-color: var(--red-dark);
 
     min-height: var(--search-height);
     padding-left: var(--search-padding);
@@ -124,7 +138,7 @@ nav .form {
 
 
     border-style: solid;
-    border-color: rgb(255, 20, 20, 0.5);
+    border-color: var(--red-bright);
     border-width: 2px;
 
     color: white;
@@ -185,7 +199,7 @@ nav form {
 }
 
 /* Background */
-main {
+body {
     --s: 50px;
     --c: var(--bg-color-1);
     --_s: calc(2*var(--s)) calc(2*var(--s));
@@ -239,5 +253,114 @@ main {
         justify-content: space-between;
     }
 
+    main .welcome {
+        max-width: 90%;
+    }
+
+}
+
+main .welcome {
+    font-family: darkest, 'Courier New', Courier, monospace;
+    font-size: 2em;
+    color: rgba(255, 225, 225, 0.3);
+    margin: auto;
+    text-align: center;
+}
+
+main .welcome h1 {
+    color: rgba(255, 200, 200, 0.5);
+}
+
+
+.content {
+    max-width: 1800px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.postcontainer {
+
+    /* This is the default background for any floating objects
+    currently in use by:
+    PostContainer.jsx
+    PostPage.jsx
+    */
+    color: white;
+    padding: 30px;
+    
+
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 200px;
+
+    border-radius: 5px;
+    border: rgb(200, 0, 0) solid 1px;
+
+
+    box-shadow: inset 0 0 20px var(--faded-red), inset 0 0 20px var(--faded-red), inset 0 0 20px var(--faded-red);
+
+}
+
+.post {
+    cursor: pointer;
+
+    margin: 5px;
+    background-color: var(--post-color-2);
+
+    color: black;
+}
+
+.post:hover {
+    box-shadow: inset 0 0 3px black;
+}
+
+.postcell1,
+.postcell2,
+.postcell3,
+.postcell4,
+.postcell5 {
+    padding-left: 5px;
+    text-overflow: ellipsis;
+}
+
+.postcell1 {
+    width: 55%;
+}
+
+.postcell2{
+    text-align: center;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+td {
+    width: auto;
+    height: 30px;
+
+    font-size: 0.8em;
+    font-weight: bolder;
+    text-align: start;
+
+    border-right: 1px solid #f6f6f6;
+    padding: 0px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--post-color-1);
+}
+
+.posttableheader {
+    color: white;
+    background: var(--red-bright);
+    height: 30px;
 
 }

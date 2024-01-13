@@ -1,0 +1,25 @@
+.loading-bar {
+    height: 3px;
+    width: 100%;
+    background-color: #f11946; /* Set your desired color */
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 0.3;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .loading-bar.loading {
+    opacity: 1;
+    animation: loading-animation 0.5s ease-in-out;
+  }
+  
+  @keyframes loading-animation {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
