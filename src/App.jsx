@@ -6,18 +6,11 @@ import Welcome from './Welcome';
 import SearchContext from './Contexts/SearchContext';
 import { Route, Routes } from 'react-router-dom';
 import PostPage from './Posts/PostPage';
-
-
-
-
-
-
+import LoginPage from './Login/Login';
+import RegisterPage from './Login/Register';
 
 const App = () => {
   const [searchResults, setSearchResults] = useState([]);
-  const renderposts = true;
-
-
 
   return (
     <SearchContext.Provider value={{ searchResults, setSearchResults }}>
@@ -27,6 +20,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Welcome/>}></Route>
             <Route path="/search" element={<PostContainer/>}></Route>
+            <Route path="/login" element={<LoginPage/>}></Route>
+            <Route path="/register" element={<RegisterPage/>}></Route>
             <Route path="/post" element={<PostPage/>}></Route>
           </Routes>
         </main>

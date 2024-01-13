@@ -1,5 +1,6 @@
 import Searchbar from "./Searchbar.jsx";
 import Navitems from "./Navitems.jsx";
+import LoadingBar from "./LoadingBar/LoadingBar.jsx";
 
 function Header() {
     return (
@@ -15,6 +16,7 @@ function Header() {
                     <Searchbar></Searchbar>
                     <Navitems></Navitems>
                 </nav>
+                <LoadingBar></LoadingBar>
             </section>
 
         </header>

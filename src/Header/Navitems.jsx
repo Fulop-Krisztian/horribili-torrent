@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 function Navitems() {
     return (
         <ul className="navbar-items">
@@ -11,15 +14,17 @@ function Navitems() {
             </li>
 
             <li className="nav-item">
-                <a className="nav-link" href="">Register</a>
+                <Link className="nav-link" to='/register'>Register</Link>
             </li>
 
             <li className="nav-item">
-                <a className="nav-link" href="">Sign in</a>
+                <Link className="nav-link" to='/login'>Sign in</Link>
             </li>
-            
+
         </ul>
     );
+
+
 }
 
 export default Navitems
