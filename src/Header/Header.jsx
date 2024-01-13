@@ -3,10 +3,10 @@ import Navitems from "./Navitems.jsx";
 
 function Header() {
     return (
-        <header>
-            <div className="welcome">
+        <header className="header">
+           {/* <div className="welcome">
                 <h1>We come!</h1>
-            </div>
+            </div>*/}
             <section className="navbar">
                 <nav className="nav">
                     <a href="/" className="logo">

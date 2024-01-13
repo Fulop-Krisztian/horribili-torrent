@@ -11,7 +11,7 @@ function Post(props) {
         <tr className='post'>
             <td className='postcell1'><a>{props.title}</a></td>
             <td className='postcell2'>{props.size}</td>
-            <td className='postcell3'>nothing</td>
+            <td className='postcell3'></td>
             <td className='postcell4'>{}</td>
             <td className='postcell5'>Krissssz</td>
         </tr>
@@ -25,10 +25,10 @@ Post.propTypes = {
 
 Post.defaultProps = {
     post_id: " No post ID defined",
-    title: " No title defined",
-    size: " No size defined",
-    uploader: " No uploader defined",
-    timstamp: " No timestamp defined"
+    title: " No post like this was found",
+    size: " -",
+    uploader: " -",
+    timstamp: " -"
 }
 
 export default Post

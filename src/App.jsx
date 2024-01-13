@@ -5,6 +5,7 @@ import PostContainer from './Posts/PostContainer';
 import Welcome from './Welcome';
 import SearchContext from './Contexts/SearchContext';
 import { Route, Routes } from 'react-router-dom';
+import PostPage from './Posts/PostPage';
 
 
 
@@ -26,6 +27,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Welcome/>}></Route>
             <Route path="/search" element={<PostContainer/>}></Route>
+            <Route path="/post" element={<PostPage/>}></Route>
           </Routes>
         </main>
         <Footer />

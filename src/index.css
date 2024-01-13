@@ -36,7 +36,7 @@ footer * {
 }
 
 /* Header */
-header .welcome {
+.header .welcome {
     font-family: darkest;
     font-size: 2em;
     font-weight: 300;
@@ -48,10 +48,11 @@ header .welcome {
 
     padding-bottom: var(--header-padding);
     padding-top: var(--header-padding);
-
-    border-bottom: #fff;
 }
 
+.nav{
+    border-bottom: 2px solid rgba(255, 0, 0,0.5);
+}
 
 /* Footer */
 footer {
@@ -281,10 +282,21 @@ main .welcome h1 {
 }
 
 .postcontainer {
+
+    /* This is the default background for any floating objects
+    currently in use by:
+    PostContainer.jsx
+    PostPage.jsx
+    */
+    color: white;
     padding: 30px;
+    
+
     width: 80%;
     margin: auto;
+    margin-top: 20px;
     background-color: rgba(0, 0, 0, 0.5);
+    min-height: 200px;
 
     border-radius: 5px;
     border: rgb(200, 0, 0) solid 1px;
@@ -318,6 +330,10 @@ main .welcome h1 {
 
 .postcell1 {
     width: 55%;
+}
+
+.postcell2{
+    text-align: center;
 }
 
 
