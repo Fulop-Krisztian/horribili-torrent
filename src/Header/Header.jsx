@@ -11,7 +11,7 @@ function Header() {
             <section className="navbar">
                 <nav className="nav">
                     <Link to="/" className="logo">
-                        <img src="src/assets/Horribili_corp.png" alt="Horribili-logo" draggable="false" height="40" />
+                        <img src="public/Horribili_corp.png" alt="Horribili-logo" draggable="false" height="40" />
                     </Link>
 
                     <Searchbar></Searchbar>

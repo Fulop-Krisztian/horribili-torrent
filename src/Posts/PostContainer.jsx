@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import SearchContext from '/src/Contexts/SearchContext.jsx';
 import Post from './Post';
+import { getNonEmptyResponse } from '../services/NonEmptyResponse';
 
 
 function PostContainer(props) {
     const { searchResults } = useContext(SearchContext);
-
+    getNonEmptyResponse(searchResults)
     return (
         <div className="postcontainer">
             <table className="posttable">
@@ -28,6 +29,7 @@ function PostContainer(props) {
                             description={post.description}
                             user_id={post.user_id}
                             timestamp={post.timestamp}
+                            foundpost={getNonEmptyResponse(searchResults)}
                         />
                     ))}
                 </tbody>
