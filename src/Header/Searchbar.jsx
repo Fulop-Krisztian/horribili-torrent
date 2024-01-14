@@ -22,7 +22,7 @@ function Searchbar() {
     try {
       const data = await searchPosts(term);
       setSearchResults(data);
-      navigate(`/search?search=${term}`, { replace: true });
+      navigate(`/search?search=${term}`, { replace: false });
     } catch (error) {
       // Handle errors
     }
