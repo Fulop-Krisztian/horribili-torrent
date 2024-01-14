@@ -1,0 +1,7 @@
+.post-link{
+    text-decoration: underline;
+    color: inherit
+}
+.post-link:hover{
+    color: var(--red-bright);
+}

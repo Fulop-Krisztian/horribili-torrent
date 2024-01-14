@@ -27,7 +27,6 @@ function PostContainer(props) {
                             title={post.title}
                             description={post.description}
                             user_id={post.user_id}
-                            file_path={post.file_path}
                             timestamp={post.timestamp}
                         />
                     ))}

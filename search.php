@@ -31,7 +31,6 @@ if ($result && mysqli_num_rows($result) > 0) {
             'title' => $row["title"],
             'description' => $row["description"],
             'user_id' => $row["user_id"],
-            'file_path' => $row["file_path"],
             'timestamp' => $row["timestamp"]
         );
     }
