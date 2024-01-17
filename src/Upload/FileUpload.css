@@ -1,0 +1,6 @@
+.fileupload{
+    background-color: red;
+    box-shadow: inset 10px 10px 5px var(--faded-red);
+    width: 300px;
+    
+}

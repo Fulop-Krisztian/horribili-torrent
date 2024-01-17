@@ -215,22 +215,6 @@ body {
     background-attachment: fixed;
 }
 
-/* Media query for mobile */
-
-
-main .welcome {
-    font-family: darkest, 'Courier New', Courier, monospace;
-    font-size: 2em;
-    color: rgba(255, 225, 225, 0.3);
-    margin: auto;
-    text-align: center;
-}
-
-main .welcome h1 {
-    color: rgba(255, 200, 200, 0.5);
-}
-
-
 .content {
     max-width: 1800px;
     margin: auto;
@@ -243,6 +227,7 @@ main .welcome h1 {
     currently in use by:
     PostContainer.jsx
     PostPage.jsx
+    Login and register pages
     */
     color: white;
     padding: 30px;
@@ -262,43 +247,7 @@ main .welcome h1 {
 
 }
 
-
-
-
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0px;
-    width: 100%;
-    border-radius: 2px;
-}
-
-
-td {
-    width: auto;
-    height: 35px;
-
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9em;
-    font-weight: bolder;
-    text-align: start;
-
-    border-right: 1px solid rgb(200, 200, 200);
-    padding: 0px;
-}
-
-
-tr:nth-child(even) {
-    background-color: var(--post-color-1);
-}
-
-.posttableheader {
-    color: white;
-    background: var(--red-bright);
-    height: 30px;
-
-}
-
+/* Media query for mobile */
 @media screen and (max-width: 800px) {
 
     /* Move search bar below other elements */

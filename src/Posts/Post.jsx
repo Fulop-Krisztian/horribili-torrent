@@ -16,22 +16,21 @@ function getFailedSearchResultMessage() {
     return failedSearchResultMessages[randomIndex];
   }
   
-
 function Post(props) {
     const postLink = `/post/${props.post_id}/${props.title}`;
 
     if (props.foundpost) {
         return (
             <tr className='post'>
-                <td className='postcell1'>
+                <td className='postcell1 postcelldata'>
                     <Link to={postLink} className='post-link'>
                         <div>{props.title}</div>
                     </Link>
                 </td>
-                <td className='postcell2'>{props.size}</td>
-                <td className='postcell3'>{props.post_id}</td>
-                <td className='postcell4'>{props.timestamp}</td>
-                <td className='postcell5'>Krissssz</td>
+                <td className='postcell2 postcelldata'>{props.size}</td>
+                <td className='postcell3 postcelldata'>{props.post_id}</td>
+                <td className='postcell4 postcelldata'>{props.timestamp}</td>
+                <td className='postcell5 postcelldata'>Placeholder</td>
             </tr>
         );
 

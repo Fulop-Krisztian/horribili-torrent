@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import SearchContext from '/src/Contexts/SearchContext.jsx';
+import { formatTimestamp } from '../services/FormatTimestamp';
 import Post from './Post';
 import { getNonEmptyResponse } from '../services/NonEmptyResponse';
-
+import './PostContainer.css'
 
 function PostContainer(props) {
     const { searchResults } = useContext(SearchContext);
+
     getNonEmptyResponse(searchResults)
     return (
         <div className="postcontainer">
@@ -28,7 +30,7 @@ function PostContainer(props) {
                             title={post.title}
                             description={post.description}
                             user_id={post.user_id}
-                            timestamp={post.timestamp}
+                            timestamp={formatTimestamp(post.timestamp)}
                             foundpost={getNonEmptyResponse(searchResults)}
                         />
                     ))}

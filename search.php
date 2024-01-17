@@ -1,10 +1,6 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
-header('Access-Control-Max-Age: 86400'); // 1 day
-header('Content-Type: application/json');
-
+// Make PHP more lenient
+require 'PHP/header.php';
 // Connect database to search from
 require 'PHP/connectdb.php';
 
