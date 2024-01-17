@@ -154,6 +154,35 @@ nav .form {
     filter: saturate(30%);
 }
 
+
+.horribili-button {
+    cursor: pointer;
+
+    border-radius: var(--navbar-radius);
+    background-color: var(--red-dark);
+
+    min-height: var(--search-height);
+    padding-left: var(--search-padding);
+    padding-right: var(--search-padding);
+
+
+    border-style: solid;
+    border-color: var(--red-bright);
+    border-width: 2px;
+
+    color: white;
+    font-size: medium;
+}
+
+.horribili-button:hover {
+    background-color: rgb(180, 20, 20);
+    border-color: rgb(255, 100, 100);
+}
+
+.horribili-button:active {
+    filter: saturate(30%);
+}
+
 /* right buttons */
 nav ul {
     list-style: none;

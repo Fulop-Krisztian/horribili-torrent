@@ -1,3 +1,35 @@
-.formcontainer{
+.uploadform {
+    margin: auto;
     display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.uploadinput {
+    all: unset;
+
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    height: 40px;
+    background-color: lightgray;
+
+}
+.uploadlabel{
+    font-size: 1.2em;
+    padding-top: 5px;
+    text-decoration: underline;
+    color: whitesmoke;
+}
+.descriptionbox{
+    size: 100%;
+    resize: none;
+}
+
+h2 {
+    text-align: center;
+    font-family: darkest;
+    font-size: 2.5em;
+    color: var(--red-bright)
 }

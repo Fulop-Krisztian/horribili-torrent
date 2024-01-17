@@ -12,7 +12,7 @@ function Searchbar() {
     const params = new URLSearchParams(window.location.search);
     const searchTermFromURL = params.get('search');
     setSearchTerm(searchTermFromURL || '');
-    
+
     if (searchTermFromURL !== null) {
       performSearch(searchTermFromURL);
     }
@@ -22,7 +22,7 @@ function Searchbar() {
     try {
       const data = await searchPosts(term);
       setSearchResults(data);
-      navigate(`/search?search=${term}`, { replace: false });
+      navigate(`/search?search=${encodeURIComponent(term)}`, { replace: false });
     } catch (error) {
       // Handle errors
     }
