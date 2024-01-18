@@ -8,19 +8,18 @@
 }
 
 .post {
-    cursor: pointer;
+
 
     margin: 5px;
     background-color: var(--post-color-2);
 
     color: black;
+    width: unset;
 }
 
 .post:hover {
     box-shadow: inset 0 0 3px black;
 }
-
-
 
 .nofound {
     cursor: unset;
@@ -32,7 +31,7 @@
     box-shadow: unset;
 }
 
-.nofound .postcell1{
+.nofound .postcell1 {
     text-align: center;
     font-size: 1rem;
     font-weight: lighter;
@@ -45,8 +44,24 @@
 .postcell5 {
     padding-left: 5px;
     padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.postcelldata .post-link div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.postcell4.postcelldata {
+    white-space: unset;
+    font-size: 0.7em;
+
+}
+
 
 .postcell1 {
     width: 55%;
@@ -63,7 +78,7 @@
     border-right: none;
 }
 
-.failedSearchMessage{
+.failedSearchMessage {
     color: black;
     font-family: darkest;
     font-style: italic;
@@ -75,6 +90,6 @@
     border: none;
 }
 
-.failedsearch{
-border: unset;
+.failedsearch {
+    border: unset;
 }

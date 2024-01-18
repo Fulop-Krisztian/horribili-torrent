@@ -154,6 +154,35 @@ nav .form {
     filter: saturate(30%);
 }
 
+
+.horribili-button {
+    cursor: pointer;
+
+    border-radius: var(--navbar-radius);
+    background-color: var(--red-dark);
+
+    min-height: var(--search-height);
+    padding-left: var(--search-padding);
+    padding-right: var(--search-padding);
+
+
+    border-style: solid;
+    border-color: var(--red-bright);
+    border-width: 2px;
+
+    color: white;
+    font-size: medium;
+}
+
+.horribili-button:hover {
+    background-color: rgb(180, 20, 20);
+    border-color: rgb(255, 100, 100);
+}
+
+.horribili-button:active {
+    filter: saturate(30%);
+}
+
 /* right buttons */
 nav ul {
     list-style: none;
@@ -215,22 +244,6 @@ body {
     background-attachment: fixed;
 }
 
-/* Media query for mobile */
-
-
-main .welcome {
-    font-family: darkest, 'Courier New', Courier, monospace;
-    font-size: 2em;
-    color: rgba(255, 225, 225, 0.3);
-    margin: auto;
-    text-align: center;
-}
-
-main .welcome h1 {
-    color: rgba(255, 200, 200, 0.5);
-}
-
-
 .content {
     max-width: 1800px;
     margin: auto;
@@ -243,6 +256,7 @@ main .welcome h1 {
     currently in use by:
     PostContainer.jsx
     PostPage.jsx
+    Login and register pages
     */
     color: white;
     padding: 30px;
@@ -262,43 +276,7 @@ main .welcome h1 {
 
 }
 
-
-
-
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0px;
-    width: 100%;
-    border-radius: 2px;
-}
-
-
-td {
-    width: auto;
-    height: 35px;
-
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9em;
-    font-weight: bolder;
-    text-align: start;
-
-    border-right: 1px solid rgb(200, 200, 200);
-    padding: 0px;
-}
-
-
-tr:nth-child(even) {
-    background-color: var(--post-color-1);
-}
-
-.posttableheader {
-    color: white;
-    background: var(--red-bright);
-    height: 30px;
-
-}
-
+/* Media query for mobile */
 @media screen and (max-width: 800px) {
 
     /* Move search bar below other elements */

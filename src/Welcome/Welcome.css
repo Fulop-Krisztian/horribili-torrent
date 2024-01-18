@@ -1,0 +1,13 @@
+.welcome {
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-family: darkest, 'Courier New', Courier, monospace;
+    font-size: 2em;
+    color: rgba(255, 225, 225, 0.3);
+    margin: auto;
+    text-align: center;
+}
+
+.welcome h1 {
+    color: rgba(255, 200, 200, 0.5);
+}
