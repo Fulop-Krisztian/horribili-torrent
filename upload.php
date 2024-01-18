@@ -9,10 +9,13 @@ $maxFileSize = 1 * 1024 * 1024; // 1MB in bytes
 
 // Check if the request method is POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     // Check if the 'file' key exists in the $_FILES array
     if (isset($_FILES['file'])) {
+
         // Check if the file size is within the allowed limit
         if ($_FILES['file']['size'] <= $maxFileSize) {
+           
             // Define a target directory for file uploads
             $uploadDirectory = 'uploads/';
 
@@ -25,6 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Move the uploaded file to the destination directory
             if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadPath)) {
                 // File uploaded successfully
+
+                // Extract additional form data
+                $user_id = isset($_POST['user_id']) ? $_POST['user_id'] : '';
+                $title = isset($_POST['title']) ? $_POST['title'] : '';
+                $description = isset($_POST['description']) ? $_POST['description'] : '';
+
+                // Perform database operations or other tasks with $uploadPath, $user_id, $title, $description
+                // ...
+
                 $response = ['status' => 'success', 'message' => 'File uploaded successfully.'];
             } else {
                 // Error uploading file

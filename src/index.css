@@ -27,7 +27,7 @@ html body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Noto Sans;
+    font-family: Noto Sans, 'Noto Sans', Arial, Helvetica, sans-serif;
 }
 
 .welcome *,
