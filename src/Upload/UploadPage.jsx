@@ -4,6 +4,7 @@ import FileUpload from './FileUpload';
 import { uploadPost } from '../services/UploadService';
 
 function UploadPage() {
+    const [message, setMessage] = useState(null)
     const [formData, setFormData] = useState({
         user_id: 1,
         title: '',
@@ -28,21 +29,24 @@ function UploadPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // Check if file is selected
         if (formData.file != null) {
-            console.log('Form data submitted:', JSON.stringify(formData, null, 2));
-            console.log(formData);
+            // console.log('Form data submitted:', JSON.stringify(formData, null, 2));
+            // console.log(formData);
     
             try {
                 const response = await uploadPost(formData);
-                console.log(response);
+                // console.log(response);
+                setMessage(response.message)
             } catch (error) {
-                console.error('Error uploading post:', error);
+                // console.error('Error uploading post:', error);
+                setMessage(error.message)
             }
         } else {
-            console.log('No file selected');
-            console.log(formData);
+            // console.log('No file selected');
+            // console.log(formData);
+            setMessage('No file selected')
         }
-        // Send the form data to your backend or perform other actions here
     };
 
     return (
@@ -72,6 +76,7 @@ function UploadPage() {
                 <button className="horribili-button" type="submit">
                     Submit
                 </button>
+                <p>{message}</p>
             </form>
         </div>
     );

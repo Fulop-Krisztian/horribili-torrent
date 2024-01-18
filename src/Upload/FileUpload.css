@@ -1,7 +1,6 @@
 .fileupload {
-
-    width: 300px;
-
+    margin: 10px;
+    max-width: 800px;
 }
 
 .choosefile {

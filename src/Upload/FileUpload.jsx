@@ -11,7 +11,7 @@ function FileUpload({ onFileChange }) {
 
   return (
     <div className="fileupload">
-      <label className="choosefile">Choose your torrent...</label>
+      <label className="choosefile">Choose your torrent... (must be .torrent file)</label>
       <input
         className="filepicker"
         type="file"
