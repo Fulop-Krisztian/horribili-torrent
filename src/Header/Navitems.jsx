@@ -5,14 +5,9 @@ function Navitems() {
     return (
         <ul className="navbar-items">
 
-            <li className="nav-item">
-                <a className="nav-link" href="https://horribili.zapto.org">Horribili</a>
+            <li className="nav-item"> 
+                <Link className="nav-link" to="/upload">Upload</Link>
             </li>
-
-            <li className="nav-item">
-                <a className="nav-link" href="https://kaet.zapto.org">KAET</a>
-            </li>
-
             <li className="nav-item">
                 <Link className="nav-link" to='/register'>Register</Link>
             </li>

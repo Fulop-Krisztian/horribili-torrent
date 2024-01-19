@@ -1,0 +1,42 @@
+.menu {
+    position: absolute;
+    left: 0px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--header-color);
+    color: white;
+    transition: left 0.2s;
+    z-index: 1;
+    border-top: 1px solid black;
+    box-shadow: 3px 5px 5px  var(--faded-red);
+    opacity: 0.95;
+    text-align: center;
+}
+
+.menu li{
+    height: 40px;
+    padding: auto;
+}
+
+.menu.open {
+    left: -250px;
+    box-shadow: none;
+}
+
+.menu-button{
+    all:unset;
+    max-height: 40px;
+
+
+}
+
+.menu-button:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 800px) {
+    .menu-button{
+        display: none;
+    }
+
+}

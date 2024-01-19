@@ -25,7 +25,6 @@ function PostContainer(props) {
                 <tbody className="posttablebody">
                     {searchResults.map((post) => (
                         <Post
-                            key={post.post_id}
                             post_id={post.post_id}
                             title={post.title}
                             description={post.description}

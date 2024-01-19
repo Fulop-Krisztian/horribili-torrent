@@ -9,7 +9,6 @@ function Welcome(props) {
             <h4 style={{ fontWeight: 'normal' }}>This squalid hamlet, these corrupted lands...</h4>
             <img src="ancestor.webp" alt=""></img>
             <h4 style={{ fontWeight: 'normal' }}>...they are yours now, and you are bound to them.</h4>
-            <Link to="/upload"><button className='horribili-button'>Upload something</button></Link>
         </div>
     );
 }

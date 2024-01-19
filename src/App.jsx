@@ -9,6 +9,7 @@ import PostPage from './Posts/PostPage';
 import LoginPage from './Login/Login';
 import RegisterPage from './Login/Register';
 import UploadPage from './Upload/UploadPage';
+import Menu from './Menu/Menu';
 
 
 const App = () => {

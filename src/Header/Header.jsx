@@ -1,27 +1,35 @@
+import React, { useState } from "react";
 import Searchbar from "./Searchbar.jsx";
 import Navitems from "./Navitems.jsx";
 import LoadingBar from "./LoadingBar/LoadingBar.jsx";
 import { Link } from "react-router-dom";
+import Menu from "../Menu/Menu.jsx";
+import MenuButton from "../Menu/MenuButton.jsx";
+
 function Header() {
-    return (
-        <header className="header">
-            {/* <div className="welcome">
-                <h1>We come!</h1>
-            </div>*/}
-            <section className="navbar">
-                <nav className="nav">
-                    <Link to="/" className="logo">
-                        <img src="public/Horribili_corp.png" alt="Horribili-logo" draggable="false" height="40" />
-                    </Link>
+  const [menuState, setMenuState] = useState(true);
 
-                    <Searchbar></Searchbar>
-                    <Navitems></Navitems>
-                </nav>
-                <LoadingBar></LoadingBar>
-            </section>
+  const toggleMenu = () => {
+    setMenuState(!menuState);
+    console.log('Menu toggled, current state:', { menuState });
+  };
 
-        </header>
-    );
+  return (
+    <header className="header">
+      <section className="navbar">
+        <nav className="nav">
+          <MenuButton toggleMenu={toggleMenu} />
+          <Link to="/" className="logo">
+            <img src="/Horribili_corp.png" alt="Horribili-logo" draggable="false" height="40" />
+          </Link>
+          <Searchbar />
+          <Navitems />
+        </nav>
+        <LoadingBar />
+      </section>
+      <Menu menuState={menuState} />
+    </header>
+  );
 }
 
-export default Header
+export default Header;
