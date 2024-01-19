@@ -1,0 +1,222 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "7513e6d830c25c73ec130d7faadd374a",
+    "packages": [
+        {
+            "name": "arokettu/bencode",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arokettu/bencode.git",
+                "reference": "e49ee6ed23aaabc11f9d2d2e186e3de397c7b7d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arokettu/bencode/zipball/e49ee6ed23aaabc11f9d2d2e186e3de397c7b7d8",
+                "reference": "e49ee6ed23aaabc11f9d2d2e186e3de397c7b7d8",
+                "shasum": ""
+            },
+            "require": {
+                "arokettu/is-resource": "^1.0",
+                "php": "^8.1",
+                "symfony/deprecation-contracts": "^2.1 | ^3.0"
+            },
+            "provide": {
+                "sandfoxme/bencode": "self.version"
+            },
+            "require-dev": {
+                "brick/math": "*",
+                "ext-gmp": "*",
+                "ext-json": "*",
+                "mikey179/vfsstream": "^1.6.10@alpha",
+                "pear/math_biginteger": "^1.0",
+                "phpunit/phpunit": "^9.4",
+                "psy/psysh": "*",
+                "sandfox.dev/code-standard": "^10@dev",
+                "squizlabs/php_codesniffer": "*",
+                "symfony/phpunit-bridge": "^6.1"
+            },
+            "suggest": {
+                "brick/math": "In case you need integers larger than your architecture supports",
+                "ext-gmp": "In case you need integers larger than your architecture supports",
+                "pear/math_biginteger": "In case you need integers larger than your architecture supports",
+                "php-64bit": "Running 64 bit is recommended to prevent integer overflow"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ],
+                "psr-4": {
+                    "SandFox\\Bencode\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Smirnov",
+                    "email": "sandfox@sandfox.me",
+                    "homepage": "https://sandfox.me",
+                    "role": "developer"
+                }
+            ],
+            "description": "BitTorrent's Bencode encoder/decoder",
+            "homepage": "https://sandfox.dev/php/bencode.html",
+            "keywords": [
+                "bencode",
+                "bittorrent",
+                "serialize",
+                "torrent"
+            ],
+            "support": {
+                "docs": "https://bencode.readthedocs.io/",
+                "issues": "https://gitlab.com/sandfox/bencode/-/issues",
+                "source": "https://gitlab.com/sandfox/bencode"
+            },
+            "time": "2022-12-14T19:17:49+00:00"
+        },
+        {
+            "name": "arokettu/is-resource",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arokettu/is-resource.git",
+                "reference": "1143639fb55e1430b518acda273c84c9fa98ff7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arokettu/is-resource/zipball/1143639fb55e1430b518acda273c84c9fa98ff7b",
+                "reference": "1143639fb55e1430b518acda273c84c9fa98ff7b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.3 < 8.4"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "classmap": [
+                    "gen/ResourceMap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Smirnov",
+                    "email": "sandfox@sandfox.me",
+                    "homepage": "https://sandfox.me/",
+                    "role": "developer"
+                }
+            ],
+            "description": "Future compatible is_resource() and get_resource_type() that can understand opaque objects",
+            "homepage": "https://sandfox.dev/php/is-resource.html",
+            "keywords": [
+                "compatibility",
+                "curl",
+                "gd",
+                "get_resource_type",
+                "hash",
+                "is_resource",
+                "pgsql",
+                "php80",
+                "php81",
+                "resources",
+                "sockets"
+            ],
+            "support": {
+                "docs": "https://is-resource.readthedocs.io/",
+                "issues": "https://gitlab.com/sandfox/is-resource/-/issues",
+                "source": "https://gitlab.com/sandfox/is-resource"
+            },
+            "time": "2023-08-28T12:32:54+00:00"
+        },
+        {
+            "name": "symfony/deprecation-contracts",
+            "version": "v3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "7c3aff79d10325257a001fcf92d991f24fc967cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/7c3aff79d10325257a001fcf92d991f24fc967cf",
+                "reference": "7c3aff79d10325257a001fcf92d991f24fc967cf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.4-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-05-23T14:45:45+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

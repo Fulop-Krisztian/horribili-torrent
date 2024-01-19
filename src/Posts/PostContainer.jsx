@@ -16,7 +16,7 @@ function PostContainer(props) {
                     <tr>
                         <th className="postcell1">Name</th>
                         <th className="postcell2">Size</th>
-                        <th className="postcell3">third</th>
+                        <th className="postcell3">Post ID</th>
                         <th className="postcell4">Time</th>
                         <th className="postcell5">Uploader</th>
                     </tr>
