@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import SearchContext from '/src/Contexts/SearchContext.jsx';
 import { formatTimestamp } from '../services/FormatTimestamp';
+import { formatSize }from '../services/FormatSize.js';
 import Post from './Post';
 import { getNonEmptyResponse } from '../services/NonEmptyResponse';
 import './PostContainer.css'
@@ -25,10 +26,11 @@ function PostContainer(props) {
                 <tbody className="posttablebody">
                     {searchResults.map((post) => (
                         <Post
+                            key={post.post_id}
                             post_id={post.post_id}
                             title={post.title}
-                            description={post.description}
-                            user_id={post.user_id}
+                            uploader={post.username}
+                            size={formatSize(post.size)}
                             timestamp={formatTimestamp(post.timestamp)}
                             foundpost={getNonEmptyResponse(searchResults)}
                         />

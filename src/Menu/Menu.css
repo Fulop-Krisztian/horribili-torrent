@@ -18,7 +18,7 @@
     padding: auto;
 }
 
-.menu.open {
+.menu.closed {
     left: -250px;
     box-shadow: none;
 }

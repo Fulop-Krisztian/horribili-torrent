@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Menu({ menuState }) {
   return (
-    <div className={`menu ${menuState ? "open" : ""}`}>
+    <div className={`menu ${menuState ? "closed" : ""}`}>
       <li className="nav-item">
         <a className="nav-link" href="https://horribili.zapto.org">
           Horribili

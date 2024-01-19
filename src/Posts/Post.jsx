@@ -30,7 +30,7 @@ function Post(props) {
                 <td className='postcell2 postcelldata'>{props.size}</td>
                 <td className='postcell3 postcelldata'>{props.post_id}</td>
                 <td className='postcell4 postcelldata'>{props.timestamp}</td>
-                <td className='postcell5 postcelldata'>Placeholder</td>
+                <td className='postcell5 postcelldata'>{props.uploader}</td>
             </tr>
         );
 
