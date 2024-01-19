@@ -5,8 +5,8 @@ require 'PHP/header.php';
 require 'PHP/connectdb.php';
 
 // Limit for entries to ask for
-
 $limit = isset($_GET['limit']) ? intval($_GET['limit']) : 50;
+
 $response = array();
 
 if (isset($_GET['search']) && $_GET['search'] !== '') {
@@ -23,6 +23,8 @@ if (isset($_GET['search']) && $_GET['search'] !== '') {
                   INNER JOIN `users` ON `posts`.`user_id` = `users`.`user_id`
               WHERE
                   `posts`.`title` LIKE '%$search%'
+              ORDER BY
+                  `posts`.`timestamp` DESC
               LIMIT $limit";
 } else {
     // If 'search' parameter is not found in the GET request, search all posts
@@ -36,6 +38,8 @@ if (isset($_GET['search']) && $_GET['search'] !== '') {
                   `posts`
                   INNER JOIN `files` ON `files`.`post_id` = `posts`.`post_id`
                   INNER JOIN `users` ON `posts`.`user_id` = `users`.`user_id`
+              ORDER BY
+                  `posts`.`timestamp` DESC
               LIMIT $limit";
 }
 
