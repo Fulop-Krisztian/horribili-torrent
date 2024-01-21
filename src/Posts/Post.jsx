@@ -40,10 +40,10 @@ function Post(props) {
             <>
             <tr className='post nofound'>
                 <td className='postcell1'>No results were returned, keep looking.</td>
-                <td className='postcell2'>{props.size}</td>
-                <td className='postcell3'>{props.post_id}</td>
-                <td className='postcell4'>{props.timestamp}</td>
-                <td className='postcell5'>{props.uploader}</td>
+                <td className='postcell2'>-</td>
+                <td className='postcell3'>-</td>
+                <td className='postcell4'>-</td>
+                <td className='postcell5'>-</td>
             </tr>
             <tr className='failedsearch' style={{backgroundColor: "var(--red-bright)"}}>
                 <td className='failedSearchMessage' colSpan='5'>{props.title}</td>
