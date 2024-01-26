@@ -28,3 +28,6 @@ uploads/
 
 # Downloads with composer
 vendor/
+
+# Don't upload the database connection details
+PHP/connectdb.php
