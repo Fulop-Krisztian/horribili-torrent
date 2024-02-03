@@ -19,6 +19,8 @@
     --red-dark: rgb(150, 10, 10);
 
     --faded-red: rgba(200, 25, 25, 0.5);
+
+    --header-color: #212529;
 }
 
 /* This is so the HTML shows up correctly (body doesn't get pushed in) */

@@ -11,10 +11,36 @@ $response = array();
 
 if (isset($_GET['search']) && $_GET['search'] !== '') {
     $search = htmlspecialchars($_GET['search']);
-    $query = "SELECT * FROM posts WHERE title LIKE '%$search%' LIMIT $limit";
+    $query = "SELECT
+                  `posts`.`title`,
+                  `files`.`size`,
+                  `posts`.`post_id`,
+                  `posts`.`timestamp`,
+                  `users`.`username`
+              FROM
+                  `posts`
+                  INNER JOIN `files` ON `files`.`post_id` = `posts`.`post_id`
+                  INNER JOIN `users` ON `posts`.`user_id` = `users`.`user_id`
+              WHERE
+                  `posts`.`title` LIKE '%$search%'
+              ORDER BY
+                  `posts`.`timestamp` DESC
+              LIMIT $limit";
 } else {
     // If 'search' parameter is not found in the GET request, search all posts
-    $query = "SELECT * FROM posts LIMIT $limit";
+    $query = "SELECT
+                  `posts`.`title`,
+                  `files`.`size`,
+                  `posts`.`post_id`,
+                  `posts`.`timestamp`,
+                  `users`.`username`
+              FROM
+                  `posts`
+                  INNER JOIN `files` ON `files`.`post_id` = `posts`.`post_id`
+                  INNER JOIN `users` ON `posts`.`user_id` = `users`.`user_id`
+              ORDER BY
+                  `posts`.`timestamp` DESC
+              LIMIT $limit";
 }
 
 $result = mysqli_query($conn, $query);
@@ -25,9 +51,9 @@ if ($result && mysqli_num_rows($result) > 0) {
         $response[] = array(
             'post_id' => $row["post_id"],
             'title' => $row["title"],
-            'description' => $row["description"],
-            'user_id' => $row["user_id"],
-            'timestamp' => $row["timestamp"]
+            'size' => $row["size"],
+            'timestamp' => $row["timestamp"],
+            'username' => $row["username"]
         );
     }
 } else {
@@ -35,3 +61,4 @@ if ($result && mysqli_num_rows($result) > 0) {
 }
 
 echo json_encode($response);
+?>
